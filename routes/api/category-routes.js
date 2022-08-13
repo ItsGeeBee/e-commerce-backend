@@ -20,7 +20,10 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
  try{
-  const categoryRoutes = await Category.findOne(req.params.id, {
+  const categoryRoutes = await Category.findOne({
+    where: { 
+      id: req.params.id
+    }, 
     include: {
       model: Product,
       attributes: ['category_id']
