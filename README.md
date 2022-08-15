@@ -29,7 +29,7 @@
 * Application can be triggered by entering 'node server.js' on terminal command line
 * User will be able to maintain database with POST, PUT and DELETE functions which can be tested in Insomnia 
 
-## Video Link & Example look
-https://drive.google.com/file/d/1_kTkvAHStZCa31CpYaGQTHfFNKfhoUsl/view?usp=sharing
+## Video Link 
+https://drive.google.com/file/d/1NEQSZbsxmE73zVMirkSqxshWjXfijjNe/view?usp=sharing
 
-<img src="assets/example.png">
+

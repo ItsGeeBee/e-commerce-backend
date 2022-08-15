@@ -3,7 +3,7 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
 
-router.get('/', (req, res) => {
+router.get('/', (req, res) => { // Get all tags from the tag table
   Tag.findAll(
     {
     attributes: ["id", "tag_name"],
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Tag.findOne({
+  Tag.findOne({ // Gets the tag based on the ID given in the request parameters
     where: {
       id: req.params.id
     },
@@ -35,9 +35,9 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  Tag.create(
+  Tag.create( // Create a new tag 
     {
-      tag_name: req.body.tag_name
+      tag_name: req.body.tag_name // required parameters 
     },
     {
       where: {
@@ -58,6 +58,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
+  // update tag data
  Tag.update(
     {
       tag_name: req.body.tag_name
@@ -82,18 +83,18 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   Tag.destroy({
-    where: {
+    where: { // Selects tag based on 
       id: req.params.id
     }
   })
     .then(tagData => {
-      if (!tagData) {
+      if (!tagData) { // If ID of tag can't be found, return message 
         res.status(404).json({ message: 'No Tag found by that ID.' });
         return;
       }
       res.json(tagData);
     })
-    .catch(err => {
+    .catch(err => { // If error log error
       console.log(err);
       res.status(500).json(err);
     });

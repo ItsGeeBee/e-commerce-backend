@@ -4,7 +4,7 @@ const sequelize = require('../config/connection.js');
 
 class Category extends Model {}
 
-Category.init(
+Category.init(  // Model requirements provided by course 
   {
     id: {
       type: DataTypes.INTEGER,

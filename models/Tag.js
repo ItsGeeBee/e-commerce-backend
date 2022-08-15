@@ -4,7 +4,7 @@ const sequelize = require('../config/connection.js');
 
 class Tag extends Model {}
 
-Tag.init(
+Tag.init( // Model requirements provided by course 
   {
    id: {
     type: DataTypes.INTEGER,
